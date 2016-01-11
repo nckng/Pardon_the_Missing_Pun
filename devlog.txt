@@ -1,3 +1,8 @@
 Team Pardon the Missing Pun
 Devlog:
 2016-01-11:
+	- Added devlog and readme file
+	   -Nicholas Ng and Adam McKoy
+	- Added Chess.java,Matrix.java, Piece.java, and files for various pieces
+	   -Nicholas Ng
+	   
