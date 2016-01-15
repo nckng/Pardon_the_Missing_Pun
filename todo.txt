@@ -1,0 +1,27 @@
+Team Pardon the Missing Pun - Nicholas Ng and Adam McKoy
+APCS1 pd10
+Hw#57 -- Checking In
+2016-01-15
+
+To-Do List:
+
+By 2016-01-14:
+-Create OrderedPair class
+-Create Chess class with working board
+-Create abstract class Piece
+-Create move methods for simple pieces (i.e. rook, bishop, knight, queen)
+
+By 2016-01-16:
+-Create move methods for complex pieces (i.e. pawn, king)
+-Create method to check for checks
+-Create methods to get user input and display board
+
+
+By 2016-01-18:
+-Create castling option
+-Add two player setup with board flipping, turn switching, turn counter, selected access to pieces
+-Make methods for checkmate and stalemate
+-Display captured pieces
+
+By 2016-01-20:
+-Create ways to display pieces better

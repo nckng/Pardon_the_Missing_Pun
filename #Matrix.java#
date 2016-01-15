@@ -193,12 +193,6 @@ public class Matrix {
 	}
 	return false;
     }//O(n^2)
-	
-    public static void main(String[] args){
-	Matrix one = new Matrix();
-	one.set(0,0, new Piece());
-    }
-    //main method for testing
 
 
 }//end class Matrix
