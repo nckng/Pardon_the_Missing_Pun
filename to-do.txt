@@ -25,3 +25,8 @@ By 2016-01-18:
 
 By 2016-01-20:
 -Create ways to display pieces better
+
+
+**(Written on 2016-01-19)
+-Make the backgrounds of the different squares different colors to resemble a board
+-Change the colors of the fonts of the piece names to black and white
