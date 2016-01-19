@@ -6,3 +6,6 @@ Devlog:
 	- Added Chess.java,Matrix.java, Piece.java, and files for various pieces
 	   -Nicholas Ng
 	   
+
+2016-01-19:
+	- Set the display names
