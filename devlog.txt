@@ -5,6 +5,7 @@ Devlog:
 	   -Nicholas Ng and Adam McKoy
 	- Added Chess.java,Matrix.java, Piece.java, and files for various pieces
 	   -Nicholas Ng
+<<<<<<< HEAD
 2016-01-12:
 	-Worked on implementing piece and board classes
 	   -Nicholas Ng
@@ -17,3 +18,9 @@ Devlog:
 	-Created UML Diagram
 	-Created flowchart
 	   -Nicholas Ng and Adam Mckoy
+=======
+	   
+
+2016-01-19:
+	- Set the display names
+>>>>>>> 0f11bc31168e44a1260ccb7897692b6ccff8a0c2
