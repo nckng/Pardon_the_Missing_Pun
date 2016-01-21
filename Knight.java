@@ -1,6 +1,6 @@
 public class Knight extends Piece{
     public Knight(){
-	displayName = N;
+	displayName = "N";
     }
     public static boolean canMove(){
 	return true;

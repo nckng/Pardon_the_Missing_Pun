@@ -1,6 +1,6 @@
 public class Bishop extends Piece{
     public Bishop(){
-	displayname = B;
+	displayname = "B";
     }
     public static boolean canMove(){
 	return true;
