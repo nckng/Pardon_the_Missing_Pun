@@ -59,12 +59,18 @@ public class Chess{//driver file for chess game
 	    {return false;}
 	    
     }
+    public static void swap(int x1, int y1, int x2, int y2){
+	Piece stor = board[y1][x1];
+	board[y1][x1] = board[y2][x2];
+	board[y2][x2] = stor;
+    }
+	
     public static void move(){
 	//select square
 	System.out.println("input x");
-	x = Keyboard.readInt();
+	int x = Keyboard.readInt();
 	System.out.println("input y");
-	y = Keyboard.readInt();
+	int y = Keyboard.readInt();
 	System.out.println(x+","+y+" selected");
 	if(board[y][x] == null){
 	    System.out.println("There is no piece on that square. Choose another one.");
@@ -80,6 +86,7 @@ public class Chess{//driver file for chess game
 	    int y1 = Keyboard.readInt();
 	    System.out.println(x1+","+y1+" selected");
 	    //can piece move?
+	    /*
 	    if(board[y][x].canMove(x1,y1)){
 		if(board[y1][x1] == null){
 		    swap(x1,y1,x,y);
@@ -90,6 +97,7 @@ public class Chess{//driver file for chess game
 		    capturedPieceList.add(store);
 		}
 	    }
+	    */
 	}
     }
 
