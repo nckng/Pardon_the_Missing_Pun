@@ -1,6 +1,6 @@
 import cs1.Keyboard;
 public class Chess{//driver file for chess game
-    public Piece[][] board;//instance variable for the board
+    public static Piece[][] board = new Piece[8][8];//instance variable for the board
     public Chess(){
 	/*
 	Matrix board = new Matrix(8);
@@ -61,30 +61,35 @@ public class Chess{//driver file for chess game
     }
     public static void move(){
 	//select square
-	
 	System.out.println("input x");
-	int x = Keyboard.readInt();
+	x = Keyboard.readInt();
 	System.out.println("input y");
-	int y = Keyboard.readInt();
+	y = Keyboard.readInt();
 	System.out.println(x+","+y+" selected");
-	while (board[y][x] == null){
-	    System.out.println("input x");
-	    int x = Keyboard.readInt();
-	    System.out.println("input y");
-	    int y = Keyboard.readInt();
-	    System.out.println(x+","+y+" selected");
-	}	    //check if square has correct turn piece
-	//is it correct player?
-	//check for check
-	//select new square
-	System.out.println("input new x");
-	int x1 = Keyboard.readInt();
-	System.out.println("input new y");
-	int y1 = Keyboard.readInt();
-	System.out.println(x1+","+y1+" selected");
-	//can piece move?
-	
-	//edit board    
+	if(board[y][x] == null){
+	    System.out.println("There is no piece on that square. Choose another one.");
+	    move();
+	} else{
+	    //check if square has correct turn piece
+	    //is it correct player?
+	    //check for check
+	    //select new square
+	    System.out.println("input new x");
+	    int x1 = Keyboard.readInt();
+	    System.out.println("input new y");
+	    int y1 = Keyboard.readInt();
+	    System.out.println(x1+","+y1+" selected");
+	    //can piece move?
+	    if(board[y][x].canMove(x1,y1)){
+		if(board[y1][x1] == null){
+		    swap(x1,y1,x,y);
+		} else{
+		    swap(x1,y1,x,y);
+		    Piece store = board[y][x];
+		    capturedPieceList.add(store);
+		}
+	    }
+	}
     }
 
     public static void game(){
