@@ -1,6 +1,0 @@
-public abstract class Piece{//super class for all pieces
-    public int row;
-    public int col;
-    public OrderedPair possibleMoves(){
-    }
-}
