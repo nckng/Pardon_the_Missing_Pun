@@ -86,6 +86,7 @@ public class Chess{//driver file for chess game
 		} else{
 		    swap(x1,y1,x,y);
 		    Piece store = board[y][x];
+		    board[y][x] = null;
 		    capturedPieceList.add(store);
 		}
 	    }
