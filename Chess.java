@@ -3,6 +3,7 @@ import java.util.*;
 public class Chess{//driver file for chess game
     public static Piece[][] board = new Piece[8][8];//instance variable for the board
     public static ArrayList<Piece> capturedPieceList;
+    public static int movecounter;
 
     public static boolean isStalemate()//is there a stalemate?
     {return false;}
@@ -27,7 +28,7 @@ public class Chess{//driver file for chess game
     }
 	
     public static void move(){
-	//select square
+	//Ask for square
 	System.out.println("input x");
 	int x = Keyboard.readInt();
 	System.out.println("input y");
@@ -79,13 +80,11 @@ public class Chess{//driver file for chess game
 	board[1][3] = new Queen(1);
     }
     public static void game(){
-	
-	int movecounter = 0;
 	boolean turn = false; //false = white, true = black
 	while(! isGameOver()){//if the game is not over
 	    movecounter++;
 	    move();
-
+	    System.out.println(movecounter);
 	}
     }
 
