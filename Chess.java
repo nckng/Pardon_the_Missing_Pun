@@ -21,6 +21,27 @@ public class Chess{//driver file for chess game
 	    {return false;}
 	    
     }
+
+    public static String printSquare(int x, int y){
+	if (board[x][y] == null){
+	    return "X";
+	} else{
+	    return board[x][y].getDisplayName();
+	}
+    }
+
+    public static void print() {
+	for(int i = 0; i < 8; i++){
+	    String line = "";
+	    for(int j = 0; j < 7; j++){
+		line += printSquare(i, j) + "  ";
+	    }
+	    line += printSquare(i, 7);
+	    System.out.println(line);
+	}
+    }
+
+
     public static void swap(int x1, int y1, int x2, int y2){
 	Piece stor = board[y1][x1];
 	board[y1][x1] = board[y2][x2];
@@ -137,7 +158,8 @@ public class Chess{//driver file for chess game
 	
     public static void main(String[] args){
 	makeBoard();
-	game();
+	print();
+	//game();
     }
 
 }
