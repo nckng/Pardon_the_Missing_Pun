@@ -1,6 +1,8 @@
 import cs1.Keyboard;
+import java.util.*;
 public class Chess{//driver file for chess game
     public static Piece[][] board = new Piece[8][8];//instance variable for the board
+    public static ArrayList<Piece> capturedPieceList;
 
     public static boolean isStalemate()//is there a stalemate?
     {return false;}
@@ -31,14 +33,17 @@ public class Chess{//driver file for chess game
 	System.out.println("input y");
 	int y = Keyboard.readInt();
 	System.out.println(x+","+y+" selected");
+	//is square empty?
 	if(board[y][x] == null){
 	    System.out.println("There is no piece on that square. Choose another one.");
 	    move();
-	} else{
-	    //check if square has correct turn piece
-	    //is it correct player?
-	    //check for check
-	    //select new square
+	}
+	//check if square has correct turn piece
+	//is it correct player?
+	//check for check
+	//select new square
+	else{
+
 	    System.out.println("input new x");
 	    int x1 = Keyboard.readInt();
 	    System.out.println("input new y");
