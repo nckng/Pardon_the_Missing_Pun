@@ -40,7 +40,10 @@ Devlog:
 	-Added list for captured Pieces
 	-Added constructor to differentiate black and white pieces
 	-Fixed move method for instances where there was a capture
+	-Added display name use
+	-Set up board for testing
+	-Turned off friendly firing (no more capturing your own piece)
 
 
 
->>>>>>> 0f11bc31168e44a1260ccb7897692b6ccff8a0c2
+
