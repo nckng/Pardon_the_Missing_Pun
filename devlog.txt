@@ -23,4 +23,21 @@ Devlog:
 
 2016-01-19:
 	- Set the display names
+	- Added the names of the pieces
+	    -Nicholas Ng and Adam Mckoy
+
+2016-01-20:
+	- Added method for checking user input and checking board tiles
+	    - Nicholas Ng
+2016-01-21:
+	- Added swap functionality for pieces on board
+	    -Nicholas Ng and Adam Mckoy
+2016-01-22
+	-Added canMove functions
+   	    -Nicholas Ng and Adam Mckoy
+2016-01-24
+	-Changed canMove function to take 4 int inputs
+	-Added list for captured Pieces
+	-Added constructor to differentiate black and white pieces
+
 >>>>>>> 0f11bc31168e44a1260ccb7897692b6ccff8a0c2
