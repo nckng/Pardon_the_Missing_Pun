@@ -159,7 +159,7 @@ public class Chess{//driver file for chess game
     public static void main(String[] args){
 	makeBoard();
 	print();
-	//game();
+	game();
     }
 
 }
