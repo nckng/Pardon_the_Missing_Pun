@@ -78,6 +78,10 @@ public class Chess{//driver file for chess game
 		    }
 		}
 	    }
+	    else{
+		System.out.println("Your piece cannot move there. Please select a different move.");
+		move();
+	    }
 	}
     }
 
