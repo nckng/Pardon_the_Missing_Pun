@@ -55,7 +55,6 @@ public class Chess{//driver file for chess game
 	//check for check
 	//select new square
 	else{
-	    System.out.println("You have chosen a "+(board[y][x]).getDisplayName());
 	    System.out.println("input new x");
 	    int x1 = Keyboard.readInt();
 	    System.out.println("input new y");
