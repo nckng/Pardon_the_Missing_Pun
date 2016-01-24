@@ -2,7 +2,7 @@ import cs1.Keyboard;
 import java.util.*;
 public class Chess{//driver file for chess game
     public static Piece[][] board = new Piece[8][8];//instance variable for the board
-    public static ArrayList<Piece> capturedPieceList;
+    public static ArrayList<Piece> cap = new ArrayList();
     public static int movecounter;
 
     public static boolean isStalemate()//is there a stalemate?
@@ -28,6 +28,8 @@ public class Chess{//driver file for chess game
     }
 	
     public static void move(){
+	//check for turn
+	boolean whiteturn = ((movecounter % 2)==0);
 	//Ask for square
 	System.out.println("input x");
 	int x = Keyboard.readInt();
@@ -40,7 +42,6 @@ public class Chess{//driver file for chess game
 	    move();
 	}
 	//check if square has correct turn piece
-	//is it correct player?
 	//check for check
 	//select new square
 	else{
@@ -51,19 +52,18 @@ public class Chess{//driver file for chess game
 	    int y1 = Keyboard.readInt();
 	    System.out.println(x1+","+y1+" selected");
 	    //can piece move?
-	    /*
-	    if(board[y][x].canMove(x1,y1)){
+	    
+	    if(board[y][x].canMove(x,y,x1,y1)){
 		if(board[y1][x1] == null){
 		    swap(x1,y1,x,y);
 		} else{
 		    swap(x1,y1,x,y);
-		    Piece store = board[y][x];
+		    cap.add(board[y][x]);
 		    board[y][x] = null;
-		    capturedPieceList.add(store);
 		}
 	    }
-	    */
-	    swap(x,y,x1,y1);
+	    
+	    //swap(x,y,x1,y1);
 	}
     }
 
@@ -82,9 +82,9 @@ public class Chess{//driver file for chess game
     public static void game(){
 	boolean turn = false; //false = white, true = black
 	while(! isGameOver()){//if the game is not over
-	    movecounter++;
 	    move();
 	    System.out.println(movecounter);
+	    movecounter++;
 	}
     }
 
