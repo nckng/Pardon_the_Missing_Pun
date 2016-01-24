@@ -55,7 +55,6 @@ public class Chess{//driver file for chess game
 	//check for check
 	//select new square
 	else{
-
 	    System.out.println("input new x");
 	    int x1 = Keyboard.readInt();
 	    System.out.println("input new y");
@@ -67,9 +66,15 @@ public class Chess{//driver file for chess game
 		    swap(x1,y1,x,y);
 		} else{//if the square has a piece
 		    //check if this piece is a friendly
-		    swap(x1,y1,x,y);
-		    cap.add(board[y][x]);
-		    board[y][x] = null;
+		    if(((board[y][x]).getWhite())==((board[y1][x1]).getWhite())){
+			System.out.println("That is your own piece! Choose another.");
+			move();
+		    }
+		    else{
+			swap(x1,y1,x,y);
+			cap.add(board[y][x]);
+			board[y][x] = null;
+		    }
 		}
 	    }
 	}
