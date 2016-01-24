@@ -1,6 +1,7 @@
 public class Knight extends Piece{
     public Knight(){
 	displayName = "N";
+	white = true;
     }
     public Knight(int b){
 	displayName = "N";

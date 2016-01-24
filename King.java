@@ -1,6 +1,7 @@
 public class King extends Piece{
     public King(){
 	displayName = "K";
+	white = true;
     }
     public King(int b){
 	displayName = "K";

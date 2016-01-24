@@ -1,6 +1,7 @@
 public class Queen extends Piece{
     public Queen(){
 	displayName = "Q";
+	white = true;
     }
     public Queen(int b){
 	displayName = "Q";

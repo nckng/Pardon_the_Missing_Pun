@@ -39,5 +39,8 @@ Devlog:
 	-Changed canMove function to take 4 int inputs
 	-Added list for captured Pieces
 	-Added constructor to differentiate black and white pieces
+	-Fixed move method for instances where there was a capture
+
+
 
 >>>>>>> 0f11bc31168e44a1260ccb7897692b6ccff8a0c2

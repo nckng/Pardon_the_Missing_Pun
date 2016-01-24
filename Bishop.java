@@ -1,6 +1,7 @@
 public class Bishop extends Piece{
     public Bishop(){
 	displayName = "B";
+	white = true;
     }
     public Bishop(int b){
 	displayName = "B";
