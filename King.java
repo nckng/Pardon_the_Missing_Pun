@@ -14,6 +14,20 @@ public class King extends Piece{
 	return displayName;
     }
     public boolean canMove(int x1, int y1, int x2, int y2){
-	return true;
+	if ((x2 == x1) && (y2 == y1)){
+	    return false;
+	}
+	else if((((x2-x1)==1)||
+		((x2-x1)== -1)||
+		((x2-x1)== 0))
+		&&
+		(((y2-y1)== -1)||
+		((y2-y1)==0)||
+		 ((y2-y1)==1))){
+	    return true;
+	}
+	else{
+	    return false;
+	}
     }
 }
