@@ -24,21 +24,42 @@ public class Chess{//driver file for chess game
 
     public static String printSquare(int x, int y){
 	if (board[x][y] == null){
-	    return "X";
+	    if((x+y)%2==0){
+		return " ";
+	    }
+	    else{
+		return "X";
+	    }
 	} else{
 	    return board[x][y].getDisplayName();
 	}
     }
 
     public static void print() {
-	for(int i = 0; i < 8; i++){
-	    String line = "";
-	    for(int j = 0; j < 7; j++){
-		line += printSquare(i, j) + "  ";
+	if ((movecounter % 2)==0){
+	    System.out.println("    0  1  2  3  4  5  6  7");
+	    System.out.println("                         ");
+	    for(int i = 0; i < 8; i++){
+		String line = i+ "   ";
+		for(int j = 0; j < 7; j++){
+		    line += printSquare(i, j) + "  ";
+		}
+		line += printSquare(i, 7);
+		System.out.println(line);
 	    }
-	    line += printSquare(i, 7);
-	    System.out.println(line);
 	}
+	else{
+	    System.out.println("    7  6  5  4  3  2  1  0");
+	    System.out.println("                          ");
+	    for (int a = 7; a >=0; a--){
+		String enil = a+ "   ";
+		for (int b = 7; b >=0; b--){
+		    enil += printSquare(a,b) + "  ";
+		}
+		System.out.println(enil);
+	    }
+	}
+		    
     }
 
 
@@ -148,6 +169,7 @@ public class Chess{//driver file for chess game
     public static void game(){
 	boolean turn = false; //false = white, true = black
 	while(! isGameOver()){//if the game is not over
+	    print();
 	    move();
 	    System.out.println(movecounter);
 	    movecounter++;
@@ -158,7 +180,6 @@ public class Chess{//driver file for chess game
 	
     public static void main(String[] args){
 	makeBoard();
-	print();
 	game();
     }
 
