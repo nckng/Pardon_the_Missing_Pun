@@ -2,6 +2,10 @@ public class Knight extends Piece{
     public Knight(){
 	displayName = "N";
     }
+    public Knight(int b){
+	displayName = "N";
+	white = false;
+    }
     public static boolean canMove(int x1, int y1, int x2, int y2){
 	return true;
     }
