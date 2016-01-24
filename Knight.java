@@ -6,7 +6,7 @@ public class Knight extends Piece{
 	displayName = "N";
 	white = false;
     }
-    public static boolean canMove(int x1, int y1, int x2, int y2){
+    public boolean canMove(int x1, int y1, int x2, int y2){
 	return true;
     }
 }

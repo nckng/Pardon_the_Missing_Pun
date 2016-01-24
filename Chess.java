@@ -63,6 +63,15 @@ public class Chess{//driver file for chess game
 
     public static void makeBoard(){
 	board[1][1] = new Pawn();
+	board[2][1] = new Pawn(1);
+	board[3][1] = new Knight();
+	board[4][1] = new Knight();
+	board[5][1] = new Bishop();
+	board[6][1] = new Bishop(1);
+	board[7][1] = new King();
+	board[0][1] = new King(1);
+	board[1][2] = new Queen();
+	board[1][3] = new Queen(1);
     }
     public static void game(){
 	
