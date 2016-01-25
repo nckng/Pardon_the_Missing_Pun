@@ -16,6 +16,14 @@ public class Pawn extends Piece{//class for pawn
     }
     public boolean canMove(int x1, int y1, int x2, int y2){
 	if (white == true){//for white pieces
+	    if ((((y1-y2)==1)&&((x2-x1)==1))   ||    (((y1-y2)==1)&&((x2-x1)==-1)))   {
+		if (Chess.isEmpty(x2,y2)){
+			return false;
+		    }
+		else{
+		    return true;
+		}
+	    }
 	    if (y1 != 6){
 		hasMoved = true;
 	    }
@@ -39,6 +47,14 @@ public class Pawn extends Piece{//class for pawn
 	else{//for black pieces
 	    if (y1 != 1){
 		hasMoved = true;
+	    }
+	    if ((((y2-y1)==1)&&((x2-x1)==1))   ||    (((y2-y1)==1)&&((x2-x1)==-1)))   {
+		if (Chess.isEmpty(x2,y2)){
+		    return false;
+		}
+		else{
+		    return true;
+		}
 	    }
 	    if (hasMoved){//if it has moved
 		if ((y2-y1)==1 && (x2==x1)){//pawn can move only 1 piece forward
