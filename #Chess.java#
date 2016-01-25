@@ -32,6 +32,7 @@ public class Chess{//driver file for chess game
 	return false;
     }
     
+    
     public static boolean isGameOver(){//if there is checkmate or stalemate the game is over
        
 	if (isCheckmate())

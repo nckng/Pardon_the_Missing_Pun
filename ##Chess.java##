@@ -11,26 +11,8 @@ public class Chess{//driver file for chess game
     public static boolean isCheckmate()
     {return false;}
 
-    public static boolean hasCheck(){
-	//find the king coord
-	int kingx = 0;
-	int kingy = 0;
-	for (int a = 0; a < 8; a++){
-	    for (int b = 0; b < 8; b++){
-		//if board[a][b] is a king and the same color as the turn color
-		kingx = b;
-		kingy = a;
-	    }
-	}
-	//ask every opposite color piece if they can check the king
-	for (int i = 0; i < 8; i++){
-	    for (int j = 0; j < 8; j ++){
-		//if piece is the wrong color
-		//can piece move to (kingx,kingy)
-	    }
-	}
-	return false;
-    }
+
+    
     
     public static boolean isGameOver(){//if there is checkmate or stalemate the game is over
        
