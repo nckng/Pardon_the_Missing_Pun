@@ -72,7 +72,7 @@ public class Queen extends Piece{
 		}
 		return true;
 	    }
-	    if((x2 == x2)&&(y2 < y1)){
+	    if((x2 == x1)&&(y2 < y1)){
 		for(int i = y2 + 1; i < y1; i++){
 		    if(!(Chess.isEmpty(x2, i))){
 			return false;
