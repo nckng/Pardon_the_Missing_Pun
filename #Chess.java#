@@ -18,6 +18,9 @@ public class Chess{//driver file for chess game
 	for (int a = 0; a < 8; a++){
 	    for (int b = 0; b < 8; b++){
 		//if board[a][b] is a king and the same color as the turn color
+		if (board[a][b] == 
+
+		
 		kingx = b;
 		kingy = a;
 	    }
@@ -31,7 +34,6 @@ public class Chess{//driver file for chess game
 	}
 	return false;
     }
-    
     
     public static boolean isGameOver(){//if there is checkmate or stalemate the game is over
        
