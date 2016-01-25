@@ -62,6 +62,9 @@ public class Chess{//driver file for chess game
 		    
     }
 
+    public static boolean isEmpty(int x, int y){
+	return board[x][y] == null;
+    }
 
     public static void swap(int x1, int y1, int x2, int y2){
 	Piece stor = board[y1][x1];
