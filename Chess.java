@@ -10,6 +10,10 @@ public class Chess{//driver file for chess game
     
     public static boolean isCheckmate()
     {return false;}
+
+    public static boolean hasCheck(){
+	return false;
+    }
     
     public static boolean isGameOver(){//if there is checkmate or stalemate the game is over
        
@@ -74,6 +78,13 @@ public class Chess{//driver file for chess game
 	
     public static void move(){
 	//check for turn
+	print();
+	Piece[][] boardCopy = new Piece[8][8];
+	for (int a = 0; a < 8; a++){
+	    for (int b = 0; b < 8 ; b++){
+		boardCopy[a][b]=board[a][b];
+	    }
+	}
 	boolean whiteturn = ((movecounter % 2)==0);
 	//Ask for square
 	if (whiteturn){
@@ -127,7 +138,19 @@ public class Chess{//driver file for chess game
 		System.out.println("Your piece cannot move there. Please select a different move.");
 		move();
 	    }
+	    //if there is check after the move, reject the move
+	    if (hasCheck()){
+		System.out.println("Sorry there is a check. You cannot make that move");
+		//board = boardCopy;
+		for (int i = 0; i < 8; i++){
+		    for (int j = 0; j < 8; j++){
+			board[i][j]=boardCopy[i][j];
+		    }
+		}
+		move();
+	    }
 	}
+	
     }
 
     public static void makeBoard(){
@@ -172,7 +195,6 @@ public class Chess{//driver file for chess game
     public static void game(){
 	boolean turn = false; //false = white, true = black
 	while(! isGameOver()){//if the game is not over
-	    print();
 	    move();
 	    System.out.println(movecounter);
 	    movecounter++;
