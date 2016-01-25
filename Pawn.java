@@ -29,7 +29,12 @@ public class Pawn extends Piece{//class for pawn
 	    }
 	    if (hasMoved){//if it has moved
 		if ((y1-y2)==1 && (x2==x1)){//pawn can move only 1 piece forward
-		    return true;
+		    if (Chess.isEmpty(x2,y2)){
+			return true;
+		    }
+		    else{
+			return false;
+		    }
 		}
 		else{
 		    return false;
@@ -37,7 +42,12 @@ public class Pawn extends Piece{//class for pawn
 	    }
 	    else{//if it hasnt moved
 		if ((((y1-y2)==1)||((y1-y2)==2)) && (x2==x1)){//pawn can move one or two forward
-		    return true;
+		    if (Chess.isEmpty(x2,y2)){
+			return true;
+		    }
+		    else{
+			return false;
+		    }
 		}
 		else{
 		    return false;
@@ -58,7 +68,12 @@ public class Pawn extends Piece{//class for pawn
 	    }
 	    if (hasMoved){//if it has moved
 		if ((y2-y1)==1 && (x2==x1)){//pawn can move only 1 piece forward
-		    return true;
+		     if (Chess.isEmpty(x2,y2)){
+			return true;
+		    }
+		    else{
+			return false;
+		    }
 		}
 		else{
 		    return false;
@@ -66,7 +81,12 @@ public class Pawn extends Piece{//class for pawn
 	    }
 	    else{//if it hasnt moved
 		if ((((y2-y1)==1)||((y2-y1)==2)) && (x2==x1)){//pawn can move one or two forward
-		    return true;
+		    if (Chess.isEmpty(x2,y2)){
+			return true;
+		    }
+		    else{
+			return false;
+		    }
 		}
 		else{
 		    return false;
