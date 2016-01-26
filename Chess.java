@@ -57,7 +57,12 @@ public class Chess{//driver file for chess game
 
 
 
-
+    private static void clear(){//clears the screen
+        final String clear = "\u001b[2J";
+        final String home = "\u001b[H";
+        System.out.print(clear + home);
+        System.out.flush();
+    }
 
 
 
@@ -128,6 +133,7 @@ public class Chess{//driver file for chess game
     }
     
     public static void print() {
+	clear();
 	if ((movecounter % 2)==0){
 	    System.out.println("    A  B  C  D  E  F  G  H");
 	    System.out.println("                         ");

@@ -58,6 +58,8 @@ Devlog:
 2015-01-26
 	-Created pregame display
 	-Wrote readme.txt
+	-Added Clear method
+	    -Nicholas Ng
 	
 
 
