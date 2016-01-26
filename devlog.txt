@@ -50,7 +50,7 @@ Devlog:
 	-Changed coordinate structure
 	-Bugfixed color
 	-Created hasCheck() method
-	-Created hasCheckmate method()
+	-Created hasCheckmate() method
 	-Worked on endgame scenarios
 	    -Nicholas Ng
 	
@@ -59,6 +59,8 @@ Devlog:
 	-Created pregame display
 	-Wrote readme.txt
 	-Added Clear method
+	-Fixed Checkmate method
+	-Added Stalemate method
 	    -Nicholas Ng
 	
 
