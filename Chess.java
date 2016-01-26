@@ -13,8 +13,8 @@ public class Chess{//driver file for chess game
 	    return false;
 	}
     }
-    
     public static boolean isCheckmate(){
+		try {
 	Piece[][] storeboard = new Piece[8][8];
 	boolean whiteturn = ((movecounter % 2)==0);
 	if (hasCheck()){
@@ -49,11 +49,14 @@ public class Chess{//driver file for chess game
 	    System.out.println("CHECKMATE");
 	    return true;
 	}
-	else{
-	    return false;
 	}
+	
+	catch (NullPointerException e) {
+		System.out.println("CHECKMATE!");
+		return true;
+	}
+	return false;
     }
-   
 
 
 
@@ -384,7 +387,6 @@ public class Chess{//driver file for chess game
 	boolean turn = false; //false = white, true = black
 	while(! isGameOver()){//if the game is not over
 	    move();
-	    System.out.println(movecounter);
 	    movecounter++;
 	}
     }
@@ -413,11 +415,9 @@ public class Chess{//driver file for chess game
 	     a = Keyboard.readInt();
 	}
 	if (a == 2){
-	    System.out.println("To play, just enter 1 in the pregame screen.");
-	    System.out.println("In this game, two players take turns making moves and attempting to checkmate their opponent");
-	    System.out.println("Each move consists of a player choosing a piece to move, and choosing a square to move it to.");
-	    System.out.println("To do this, the player is be prompted to enter two coordinates: the initial square, and the target square.");
-	    System.out.println("These coordinates should be in <column><row> form and this will be specified in the prompts.");
+	    System.out.println("To play, just enter 1 in the pregame screen.  In this game, two players take turns making moves and attempting to checkmate their opponent. ");
+	    System.out.println("Each move consists of a player choosing a piece to move, and choosing a square to move it to.  To do this, the player is be prompted to enter two");
+	    System.out.println("coordinates: the initial square, and the target square.  These coordinates should be in <column><row> form and this will be specified in the prompts.");
 	    System.out.println("Once a move is over, the board will flip and it will be the opposite player's turn.");
 	    System.out.println("Enter anything to exit");
 	    String r = Keyboard.readString();
