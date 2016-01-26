@@ -1,10 +1,10 @@
 public class Rook extends Piece{
     public Rook(){
-	displayName = "\033[37mR";
+	displayName = "R";
 	white = true;
     }
     public Rook(int b){
-	displayName = "\033[30R";
+	displayName = "R";
 	white = false;
     }
     public boolean getWhite(){

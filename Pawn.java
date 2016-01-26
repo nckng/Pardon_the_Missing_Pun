@@ -1,11 +1,11 @@
 public class Pawn extends Piece{//class for pawn
     public boolean hasMoved = false;
     public Pawn(){
-	displayName = "\033[37mP";
+	displayName = "P";
 	white = true;
     }
     public Pawn(int a){
-	displayName = "\033[30P";
+	displayName = "P";
 	white = false;
     }
     public boolean getWhite(){

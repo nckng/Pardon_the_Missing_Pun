@@ -1,10 +1,10 @@
 public class Bishop extends Piece{
     public Bishop(){
-	displayName = "\033[37mB";
+	displayName = "B";
 	white = true;
     }
     public Bishop(int b){
-	displayName = "\033[30B";
+	displayName = "B";
 	white = false;
     }
     public boolean getWhite(){
