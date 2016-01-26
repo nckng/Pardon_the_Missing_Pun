@@ -105,7 +105,10 @@ public class Chess{//driver file for chess game
 	board[y1][x1] = board[y2][x2];
 	board[y2][x2] = stor;
     }
-	
+
+
+
+				 
     public static void move(){
 	//check for turn
 	print();
@@ -123,9 +126,9 @@ public class Chess{//driver file for chess game
 	else{
 	    System.out.println("Black's turn");
 	}
-	System.out.println("input x");
+	System.out.println("Input column");
 	int x = Keyboard.readInt();
-	System.out.println("input y");
+	System.out.println("Input row");
 	int y = Keyboard.readInt();
 	System.out.println(x+","+y+" selected");
 	//is square empty?
@@ -142,9 +145,9 @@ public class Chess{//driver file for chess game
 	//select new square
 	else{
 	    System.out.println("You have chosen a "+(board[y][x]).getDisplayName());
-	    System.out.println("input new x");
+	    System.out.println("Input new column");
 	    int x1 = Keyboard.readInt();
-	    System.out.println("input new y");
+	    System.out.println("Input new row");
 	    int y1 = Keyboard.readInt();
 	    System.out.println(x1+","+y1+" selected");
 	    //can piece move?
