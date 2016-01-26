@@ -23,6 +23,7 @@ public class Chess{//driver file for chess game
 						}
 					    }							
 					    swap(i,j,k,l);
+					    board[i][j]=null;
 					    if (!(hasCheck())){
 						for (int c = 0; c < 8; c++){
 						    for(int d =0; d < 8; d++){
@@ -68,6 +69,7 @@ public class Chess{//driver file for chess game
 					    }
 					}							
 					swap(i,j,k,l);
+					board[i][j]=null;
 					if (!(hasCheck())){
 					    for (int c = 0; c < 8; c++){
 						for(int d =0; d < 8; d++){
