@@ -67,22 +67,20 @@ public class Chess{//driver file for chess game
     }
 
     public static String printSquare(int x, int y){
-	if (board[x][y] == null){
+	if(board[x][y] == null){
 	    if((x+y)%2==0){
 		return " ";
 	    }
 	    else{
-		return "X";
+		return "\033[31mX";
 	    }
+	} else if(board[x][y].white){
+	    return "\033[37m" + board[x][y].getDisplayName();
 	} else{
-	    if(board[x][y].white){
-		return "\033[37m" + board[x][y].getDisplayName();
-	    } else{
-		return "\033[30" + board[x][y].getDisplayName();
-	    }
-	}		
-    }	
-
+	    return "\033[34m" + board[x][y].getDisplayName();
+	}
+    }
+    
     public static void print() {
 	if ((movecounter % 2)==0){
 	    System.out.println("    A  B  C  D  E  F  G  H");
@@ -93,7 +91,7 @@ public class Chess{//driver file for chess game
 		    line += printSquare(i, j) + "  ";
 		}
 		line += printSquare(i, 7);
-		System.out.println(line);
+		System.out.println(line + "\033[37m ");
 	    }
 	}
 	else{
@@ -104,7 +102,7 @@ public class Chess{//driver file for chess game
 		for (int b = 7; b >=0; b--){
 		    enil += printSquare(a,b) + "  ";
 		}
-		System.out.println(enil);
+		System.out.println(enil + "\033[37m ");
 	    }
 	}
 		    
