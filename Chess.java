@@ -13,34 +13,47 @@ public class Chess{//driver file for chess game
 
     public static boolean hasCheck(){
 	//find the king coord
+	boolean whiteturn = ((movecounter % 2)==0);
 	int kingx = 0;
 	int kingy = 0;
 	for (int a = 0; a < 8; a++){
 	    for (int b = 0; b < 8; b++){
 		//if board[a][b] is a king and the same color as the turn color
-		kingx = b;
-		kingy = a;
+		if (!(board[a][b] == null)){//if it isnt empty
+		    if (((board[a][b]).getDisplayName()).equals("K")){//is it a king
+			if((board[a][b]).getWhite()==whiteturn){//if the piece is the same color as the turn
+			    kingx = b;
+			    kingy = a;
+			}
+		    }
+		}
 	    }
 	}
+	//System.out.println(kingx);
+	//System.out.println(kingy);
 	//ask every opposite color piece if they can check the king
 	for (int i = 0; i < 8; i++){
 	    for (int j = 0; j < 8; j ++){
-		//if piece is the wrong color
-		//can piece move to (kingx,kingy)
+		if (!(board[i][j] == null)){//if it isnt empty
+		    if ((board[i][j]).getWhite() != whiteturn){//if it is the opposite color of the king
+			//System.out.println(j + " " +i);
+			if ((board[i][j]).canMove(j,i,kingx,kingy)){
+			    return true;
+			}
+		    }
+		}
 	    }
 	}
 	return false;
     }
     
     public static boolean isGameOver(){//if there is checkmate or stalemate the game is over
-       
 	if (isCheckmate())
 	    {return true;}
 	else if (isStalemate())
 	    {return true;}
 	else
 	    {return false;}
-	    
     }
 
     public static String printSquare(int x, int y){
