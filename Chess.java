@@ -68,11 +68,6 @@ public class Chess{//driver file for chess game
     }
 
 
-
-
-
-
-
 	    
 
     public static boolean hasCheck(){
@@ -136,7 +131,7 @@ public class Chess{//driver file for chess game
     }
     
     public static void print() {
-	clear();
+
 	if ((movecounter % 2)==0){
 	    System.out.println("    A  B  C  D  E  F  G  H");
 	    System.out.println("                         ");
@@ -184,6 +179,7 @@ public class Chess{//driver file for chess game
 	int y1 = 0;
 	String ab = "";
 	String abc = "";
+	clear();
 	print();
 	Piece[][] boardCopy = new Piece[8][8];
 	for (int a = 0; a < 8; a++){
@@ -202,14 +198,6 @@ public class Chess{//driver file for chess game
 	else{
 	    System.out.println("Black's turn");
 	}
-	/*
-	System.out.println("Input column");
-	int x = Keyboard.readInt();
-	System.out.println("Input row");
-	int y = Keyboard.readInt();
-	System.out.println(x+","+y+" selected");
-	//is square empty?
-	*/
 
 	System.out.println("Input first coordinate");
 	ab = Keyboard.readString();
@@ -227,56 +215,27 @@ public class Chess{//driver file for chess game
 	}
 	else{
 	    System.out.println("Sorry that range was invalid. Please list a letter (a-h) and a number (1-8)");
-	    for (int i = 0; i < 8; i++){
-		for (int j = 0; j < 8; j++){
-		    board[i][j]=boardCopy[i][j];
-		}
-	    }
 	    move();
 	}
 
 	
 	if(board[y][x] == null){
 	    System.out.println("There is no piece on that square. Choose another one.");
-	    for (int i = 0; i < 8; i++){
-		for (int j = 0; j < 8; j++){
-		    board[i][j]=boardCopy[i][j];
-		}
-	    }
 	    move();
 	}
 	//check if square has correct turn piece
 	else if(((board[y][x]).getWhite())!=(whiteturn)){
 	    System.out.println("That is not your piece. Choose another.");
-		for (int i = 0; i < 8; i++){
-		    for (int j = 0; j < 8; j++){
-			board[i][j]=boardCopy[i][j];
-		    }
-		}
 		move();
 	}
 	//check for check
 	//select new square
 	else{
 	    System.out.println("You have chosen a "+(board[y][x]).getDisplayName());
-	    /*
-	    System.out.println("Input new column");
-	    int x1 = Keyboard.readInt();
-	    System.out.println("Input new row");
-	    int y1 = Keyboard.readInt();
-	    System.out.println(x1+","+y1+" selected");
-	    */
-
 	    System.out.println("Input second coordinate");
 	    abc = Keyboard.readString();
 	    if (abc.length() != 2){
-		abc = "e4";
 		System.out.println("Sorry that is not valid. Please put your coordinate in the form <column><row>");
-		for (int i = 0; i < 8; i++){
-		    for (int j = 0; j < 8; j++){
-			board[i][j]=boardCopy[i][j];
-		    }
-		}
 		move();
 	    }
 	    if (lol.contains(abc.substring(0,1))){
@@ -287,11 +246,6 @@ public class Chess{//driver file for chess game
 	    }
 	    else{
 		System.out.println("Sorry that range was invalid. Please list a letter (a-h) and a number (1-8)");
-		for (int i = 0; i < 8; i++){
-		    for (int j = 0; j < 8; j++){
-			board[i][j]=boardCopy[i][j];
-		    }
-		}
 		move();
 	    }
 	    
