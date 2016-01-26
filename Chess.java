@@ -5,11 +5,21 @@ public class Chess{//driver file for chess game
     public static ArrayList<Piece> cap = new ArrayList();
     public static int movecounter;
 
-    public static boolean isStalemate()//is there a stalemate?
-    {return false;}
+    public static boolean isStalemate(){//is there a stalemate?
+	if (hasCheck()){
+	    return false;
+	}
+	else{
+	    return false;
+	}
+    }
     
-    public static boolean isCheckmate()
-    {return false;}
+    public static boolean isCheckmate(){
+	if (hasCheck()){
+	    return false;
+	}
+	return false;
+    }
 
     public static boolean hasCheck(){
 	//find the king coord
