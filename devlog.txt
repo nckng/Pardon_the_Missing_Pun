@@ -43,7 +43,22 @@ Devlog:
 	-Added display name use
 	-Set up board for testing
 	-Turned off friendly firing (no more capturing your own piece)
+	   -Nicholas Ng
 
+2016-01-25
+	-Added mechanism for dealing with checks
+	-Changed coordinate structure
+	-Bugfixed color
+	-Created hasCheck() method
+	-Created hasCheckmate method()
+	-Worked on endgame scenarios
+	    -Nicholas Ng
+	
+
+2015-01-26
+	-Created pregame display
+	-Wrote readme.txt
+	
 
 
 

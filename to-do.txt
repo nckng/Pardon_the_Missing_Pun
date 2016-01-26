@@ -26,4 +26,9 @@ By 2016-01-20:
 -Make the backgrounds of the different squares different colors to resemble a board
 -Change the colors of the fonts of the piece names to black and white
 
-CREATE MOVE METHODS
+-add en passant
+-add castling
+-do all of the work
+-update devlog
+-make ending nice
+-stalemate

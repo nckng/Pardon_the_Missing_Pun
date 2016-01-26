@@ -386,8 +386,45 @@ public class Chess{//driver file for chess game
 
 	
     public static void main(String[] args){
-	makeBoard();
-	game();
+	System.out.println("");
+	System.out.println("----------------------------------------------");
+	System.out.println(" ######  ##     ## ########  ######   ######  ");
+	System.out.println("##    ## ##     ## ##       ##    ## ##    ## ");
+	System.out.println("##       ##     ## ##       ##       ##       ");
+	System.out.println("##       ######### ######    ######   ######  ");
+	System.out.println("##       ##     ## ##             ##       ## ");
+	System.out.println("##    ## ##     ## ##       ##    ## ##    ## ");
+  	System.out.println(" ######  ##     ## ########  ######   ######  ");
+	System.out.println("----------------------------------------------");
+	System.out.println("");
+	System.out.println("");
+	System.out.println("SELECT AN OPTION BY TYPING A NUMBER BELOW TO BEGIN");
+	System.out.println("1. PLAY");
+	System.out.println("2. INSTRUCTIONS");
+	System.out.println("3. QUIT");
+	int a = 10;
+	while ((a !=1) && (a!=2) && (a !=3)){
+	     a = Keyboard.readInt();
+	}
+	if (a == 2){
+	    System.out.println("To play, just enter 1 in the pregame screen.");
+	    System.out.println("In this game, two players take turns making moves and attempting to checkmate their opponent");
+	    System.out.println("Each move consists of a player choosing a piece to move, and choosing a square to move it to.");
+	    System.out.println("To do this, the player is be prompted to enter two coordinates: the initial square, and the target square.");
+	    System.out.println("These coordinates should be in <column><row> form and this will be specified in the prompts.");
+	    System.out.println("Once a move is over, the board will flip and it will be the opposite player's turn.");
+	    System.out.println("Enter anything to exit");
+	    String r = Keyboard.readString();
+	    return;
+	}
+	if (a == 3){
+	    return;
+	}
+	if (a == 1){
+	    makeBoard();
+	    game();
+	}
+	
     }
 
 }
