@@ -81,10 +81,10 @@ public class Chess{//driver file for chess game
 
     public static void print() {
 	if ((movecounter % 2)==0){
-	    System.out.println("    0  1  2  3  4  5  6  7");
+	    System.out.println("    A  B  C  D  E  F  G  H");
 	    System.out.println("                         ");
 	    for(int i = 0; i < 8; i++){
-		String line = i+ "   ";
+		String line = (8-i)+ "   ";
 		for(int j = 0; j < 7; j++){
 		    line += printSquare(i, j) + "  ";
 		}
@@ -93,10 +93,10 @@ public class Chess{//driver file for chess game
 	    }
 	}
 	else{
-	    System.out.println("    7  6  5  4  3  2  1  0");
+	    System.out.println("    H  G  F  E  D  C  B  A");
 	    System.out.println("                          ");
 	    for (int a = 7; a >=0; a--){
-		String enil = a+ "   ";
+		String enil = (8-a)+ "   ";
 		for (int b = 7; b >=0; b--){
 		    enil += printSquare(a,b) + "  ";
 		}
@@ -139,12 +139,35 @@ public class Chess{//driver file for chess game
 	else{
 	    System.out.println("Black's turn");
 	}
+	/*
 	System.out.println("Input column");
 	int x = Keyboard.readInt();
 	System.out.println("Input row");
 	int y = Keyboard.readInt();
 	System.out.println(x+","+y+" selected");
 	//is square empty?
+	*/
+	int x = 0;
+	int y = 0;
+	System.out.println("Input first coordinate");
+	String ab = Keyboard.readString();
+	if (ab.length() != 2){
+	    System.out.println("Sorry that is not valid. Please put your coordinate in the form <column><row>");
+	    move();
+	}
+	String lol = ("ABCDEFGHabcdefgh");
+	String lel = ("12345678");
+	if (lol.contains(ab.substring(0,1))){
+	    if (lel.contains(ab.substring(1,2))){
+		x = lol.indexOf(ab.substring(0,1)) % 8;
+		y = 7 - lel.indexOf(ab.substring(1,2));
+	    }
+	}
+	else{
+	    System.out.println("Sorry that range was invalid. Please list a letter (a-h) and a number (1-8)");
+	}
+
+	
 	if(board[y][x] == null){
 	    System.out.println("There is no piece on that square. Choose another one.");
 	    move();
@@ -158,11 +181,36 @@ public class Chess{//driver file for chess game
 	//select new square
 	else{
 	    System.out.println("You have chosen a "+(board[y][x]).getDisplayName());
+	    /*
 	    System.out.println("Input new column");
 	    int x1 = Keyboard.readInt();
 	    System.out.println("Input new row");
 	    int y1 = Keyboard.readInt();
 	    System.out.println(x1+","+y1+" selected");
+	    */
+
+	    
+	    int x1 = 0;
+	    int y1 = 0;
+	    System.out.println("Input second coordinate");
+	    String abc = Keyboard.readString();
+	    if (abc.length() != 2){
+		System.out.println("Sorry that is not valid. Please put your coordinate in the form <column><row>");
+		move();
+	    }
+	    if (lol.contains(abc.substring(0,1))){
+		if (lel.contains(abc.substring(1,2))){
+		    x1 = lol.indexOf(abc.substring(0,1)) % 8;
+		    y1 = 7- lel.indexOf(abc.substring(1,2));
+		}
+	    }
+	    else{
+		System.out.println("Sorry that range was invalid. Please list a letter (a-h) and a number (1-8)");
+	    }
+	    
+	    
+
+
 	    //can piece move?
 	    if(board[y][x].canMove(x,y,x1,y1)){//if square is empty, just move
 		if(board[y1][x1] == null){
