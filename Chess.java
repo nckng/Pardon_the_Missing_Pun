@@ -215,7 +215,7 @@ public class Chess{//driver file for chess game
 	int y1 = 0;
 	String ab = "";
 	String abc = "";
-	clear();
+	//clear();
 	print();
 	Piece[][] boardCopy = new Piece[8][8];
 	for (int a = 0; a < 8; a++){
