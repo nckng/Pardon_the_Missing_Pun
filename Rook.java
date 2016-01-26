@@ -2,6 +2,7 @@ public class Rook extends Piece{
     public Rook(){
 	displayName = "R";
 	white = true;
+	boolean hasMoved = false;
     }
     public Rook(int b){
 	displayName = "R";
@@ -54,4 +55,3 @@ public class Rook extends Piece{
 	return false;
     }
 }
-
