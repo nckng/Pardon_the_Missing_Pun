@@ -59,8 +59,9 @@ Devlog:
 	-Created pregame display
 	-Wrote readme.txt
 	-Added Clear method
-	-Fixed Checkmate method
 	-Added Stalemate method
+	-Fixed bugs in square selection
+	-Added promotion
 	    -Nicholas Ng
 	
 
