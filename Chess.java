@@ -410,7 +410,7 @@ public class Chess{//driver file for chess game
 	    System.out.println("To play, just enter 1 in the pregame screen.  In this game, two players take turns making moves and attempting to checkmate their opponent. ");
 	    System.out.println("Each move consists of a player choosing a piece to move, and choosing a square to move it to.  To do this, the player is be prompted to enter two");
 	    System.out.println("coordinates: the initial square, and the target square.  These coordinates should be in <column><row> form and this will be specified in the prompts.");
-	    System.out.println("Once a move is over, the board will flip and it will be the opposite player's turn.");
+	    System.out.println("Once a move is over, the board will flip and it will be the opposite player's turn.  Quit at anytime using ctrl-c.");
 	    System.out.println("Enter anything to exit");
 	    String r = Keyboard.readString();
 	    return;
