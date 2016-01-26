@@ -5,6 +5,24 @@ public class Chess{//driver file for chess game
     public static ArrayList<Piece> cap = new ArrayList();
     public static int movecounter;
 
+    public static void promote(){
+	for (int i =0; i <8; i++){
+	    for (int j =0; j <8; j++){
+		if (!(board[i][j] == null)){
+		    if (((board[i][j]).getDisplayName()).equals("P")){
+			if (((board[i][j]).getWhite() == true)&&(i==0)){
+			    board[i][j]=new Queen();
+			}
+			if (((board[i][j]).getWhite() == false)&&(i==7)){
+			    board[i][j]=new Queen(1);
+			}
+		    }
+		}
+	    }
+
+	}
+    }
+			    
     public static boolean isStalemate(){
 	try {
 	    Piece[][] storeboard = new Piece[8][8];
@@ -343,6 +361,7 @@ public class Chess{//driver file for chess game
 		}
 		move();
 	    }
+	    promote();
 	}
 	
     }
