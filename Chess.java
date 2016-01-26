@@ -75,9 +75,13 @@ public class Chess{//driver file for chess game
 		return "X";
 	    }
 	} else{
-	    return board[x][y].getDisplayName();
-	}
-    }
+	    if(board[x][y].white){
+		return "\033[37m" + board[x][y].getDisplayName();
+	    } else{
+		return "\033[30" + board[x][y].getDisplayName();
+	    }
+	}		
+    }	
 
     public static void print() {
 	if ((movecounter % 2)==0){
