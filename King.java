@@ -1,10 +1,10 @@
 public class King extends Piece{
     public King(){
-	displayName = "K";
+	displayName = "\033[37mK";
 	white = true;
     }
     public King(int b){
-	displayName = "K";
+	displayName = "\033[30K";
 	white = false;
     }
     public boolean getWhite(){

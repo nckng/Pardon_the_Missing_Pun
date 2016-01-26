@@ -1,10 +1,10 @@
 public class Knight extends Piece{
     public Knight(){
-	displayName = "N";
+	displayName = "\033[37mN";
 	white = true;
     }
     public Knight(int b){
-	displayName = "N";
+	displayName = "\033[30N";
 	white = false;
     }
     public boolean getWhite(){

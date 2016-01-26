@@ -1,10 +1,10 @@
 public class Queen extends Piece{
     public Queen(){
-	displayName = "Q";
+	displayName = "\033[37mQ";
 	white = true;
     }
     public Queen(int b){
-	displayName = "Q";
+	displayName = "\033[30Q";
 	white = false;
     }
     public boolean getWhite(){
