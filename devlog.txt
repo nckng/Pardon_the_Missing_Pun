@@ -63,6 +63,9 @@ Devlog:
 	-Fixed bugs in square selection
 	-Added promotion
 	    -Nicholas Ng
+
+	-Added castling
+	    -Adam McKoy
 	
 
 
