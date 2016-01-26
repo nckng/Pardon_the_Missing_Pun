@@ -5,14 +5,51 @@ public class Chess{//driver file for chess game
     public static ArrayList<Piece> cap = new ArrayList();
     public static int movecounter;
 
-    public static boolean isStalemate(){//is there a stalemate?
-	if (hasCheck()){
-	    return false;
+    public static boolean isStalemate(){
+	try {
+	    Piece[][] storeboard = new Piece[8][8];
+	    boolean whiteturn = ((movecounter % 2)==0);
+	    if (!(hasCheck())){
+		for (int i = 0; i < 8; i++){
+		    for (int j = 0; j < 8; j++){
+			if (!(board[i][j] == null)){
+			    if    (  ((board[i][j]).getWhite()) == whiteturn){
+				for (int l = 0; l < 8; l++){
+				    for (int k = 0; k < 8; k++){
+					if (((board[l][k] == null) || ((board[l][k]).getWhite() != whiteturn))  && ((board[i][j]).canMove(i,j,k,l))){
+					    for (int a = 0; a < 8; a++){
+						for (int b = 0; b < 8; b++){
+						    storeboard[a][b]=board[a][b];
+						}
+					    }							
+					    swap(i,j,k,l);
+					    if (!(hasCheck())){
+						for (int c = 0; c < 8; c++){
+						    for(int d =0; d < 8; d++){
+							board[c][d] = storeboard[c][d];
+						    }
+						}
+						return false;
+					    }	
+					}
+				    }
+				}
+			    }
+			}
+		    }
+		}
+		System.out.println("Stalemate.");
+		return true;
+	    }
 	}
-	else{
-	    return false;
+	catch (NullPointerException e) {
+	    System.out.println("Stalemate.");
+	    return true;
 	}
+	return false;
     }
+				    
+        
     public static boolean isCheckmate(){
 		try {
 	Piece[][] storeboard = new Piece[8][8];
@@ -49,13 +86,12 @@ public class Chess{//driver file for chess game
 	    System.out.println("CHECKMATE");
 	    return true;
 	}
-	}
-	
-	catch (NullPointerException e) {
-		System.out.println("CHECKMATE!");
-		return true;
-	}
-	return false;
+		}
+		catch (NullPointerException e) {
+		    System.out.println("CHECKMATE!");
+		    return true;
+		}
+		return false;
     }
 
 
