@@ -13,7 +13,7 @@ public class Chess{//driver file for chess game
 		for (int i = 0; i < 8; i++){
 		    for (int j = 0; j < 8; j++){
 			if (!(board[i][j] == null)){
-			    if    (  ((board[i][j]).getWhite()) == whiteturn){
+			    if    (((board[i][j]).getWhite()) == whiteturn){
 				for (int l = 0; l < 8; l++){
 				    for (int k = 0; k < 8; k++){
 					if (((board[l][k] == null) || ((board[l][k]).getWhite() != whiteturn))  && ((board[i][j]).canMove(i,j,k,l))){
@@ -49,35 +49,36 @@ public class Chess{//driver file for chess game
 	}
 	return false;
     }
-				    
-        
+   			    
     public static boolean isCheckmate(){
-		try {
+	/*
 	Piece[][] storeboard = new Piece[8][8];
-	boolean whiteturn = ((movecounter % 2)==0);
+	boolean whiteturn = ((movecounter % 2) == 0);
 	if (hasCheck()){
 	    for (int i = 0; i < 8; i++){
 		for (int j = 0; j < 8; j++){
 		    if (!(board[i][j] == null)){
-			if    (  ((board[i][j]).getWhite()) == whiteturn){
-			    for (int l = 0; l < 8; l++){
-				for (int k = 0; k < 8; k++){
-				    if (((board[l][k] == null) || ((board[l][k]).getWhite() != whiteturn))  && ((board[i][j]).canMove(i,j,k,l))){
-					for (int a = 0; a < 8; a++){
-					    for (int b = 0; b < 8; b++){
-						storeboard[a][b]=board[a][b];
-					    }
-					}							
-					swap(i,j,k,l);
-					board[i][j]=null;
-					if (!(hasCheck())){
-					    for (int c = 0; c < 8; c++){
-						for(int d =0; d < 8; d++){
-						    board[c][d] = storeboard[c][d];
+			if (((board[i][j]).getWhite()) == whiteturn){
+			    for (int a = 0; a < 8; a++){
+				for (int b = 0; b < 8; b++){
+				    if ((board[a][b] == null) || ((board[a][b]).getWhite() != whiteturn)){
+					if ((board[i][j]).canMove(j,i,b,a)){
+					    for (int y =0; y <8; y++){
+						for (int z =0; z < 8; z++){
+						    storeboard[y][z] = board[y][z];
 						}
 					    }
-					    return false;
-					}	
+					    swap(j,i,b,a);
+					    board[i][j]=null;
+					    if (!(hasCheck())){
+						return false;
+					    }
+					    for (int r =0; r <8; r++){
+						for (int s=0; s <8; s++){
+						    board[r][s]=storeboard[r][s];
+						}
+					    }
+					}
 				    }
 				}
 			    }
@@ -85,16 +86,14 @@ public class Chess{//driver file for chess game
 		    }
 		}
 	    }
-	    System.out.println("CHECKMATE");
+	    System.out.println("CHECKMATE!");
 	    return true;
 	}
-		}
-		catch (NullPointerException e) {
-		    System.out.println("CHECKMATE!");
-		    return true;
-		}
-		return false;
+	return false;
+	*/
+	return false;
     }
+    
 
 
 
@@ -206,10 +205,7 @@ public class Chess{//driver file for chess game
 	board[y2][x2] = stor;
     }
 
-
-
-				 
-    public static void move(){
+     public static void move(){
 	//check for turn
 	int x = 0;
 	int y = 0;
@@ -217,6 +213,8 @@ public class Chess{//driver file for chess game
 	int y1 = 0;
 	String ab = "";
 	String abc = "";
+	String lol = ("ABCDEFGHabcdefgh");
+	String lel = ("12345678");
 	//clear();
 	print();
 	Piece[][] boardCopy = new Piece[8][8];
@@ -236,15 +234,14 @@ public class Chess{//driver file for chess game
 	else{
 	    System.out.println("Black's turn");
 	}
-
 	System.out.println("Input first coordinate");
+	/*
 	ab = Keyboard.readString();
 	if (ab.length() != 2){
 	    System.out.println("Sorry that is not valid. Please put your coordinate in the form <column><row>");
 	    move();
 	}
-	String lol = ("ABCDEFGHabcdefgh");
-	String lel = ("12345678");
+
 	if (lol.contains(ab.substring(0,1))){
 	    if (lel.contains(ab.substring(1,2))){
 		x = lol.indexOf(ab.substring(0,1)) % 8;
@@ -255,8 +252,14 @@ public class Chess{//driver file for chess game
 	    System.out.println("Sorry that range was invalid. Please list a letter (a-h) and a number (1-8)");
 	    move();
 	}
-
-	
+	*/
+	ab = Keyboard.readString();
+	while ((ab.length() != 2)  || !(lol.contains(ab.substring(0,1)))  ||  !(lel.contains(ab.substring(1,2)))){
+	    System.out.println("Sorry this is invalid. Please put your coordinate in the form <column><row> and make sure the column is between a and h and the number is between 1 and 8.");
+	    ab = Keyboard.readString();
+	}
+	x = lol.indexOf(ab.substring(0,1)) % 8;
+	y = 7 - lel.indexOf(ab.substring(1,2));
 	if(board[y][x] == null){
 	    System.out.println("There is no piece on that square. Choose another one.");
 	    move();
@@ -272,6 +275,7 @@ public class Chess{//driver file for chess game
 	    System.out.println("You have chosen a "+(board[y][x]).getDisplayName());
 	    System.out.println("Input second coordinate");
 	    abc = Keyboard.readString();
+	    /*
 	    if (abc.length() != 2){
 		System.out.println("Sorry that is not valid. Please put your coordinate in the form <column><row>");
 		move();
@@ -286,6 +290,13 @@ public class Chess{//driver file for chess game
 		System.out.println("Sorry that range was invalid. Please list a letter (a-h) and a number (1-8)");
 		move();
 	    }
+	    */
+	    while ((abc.length() != 2)  || !(lol.contains(abc.substring(0,1)))  ||  !(lel.contains(abc.substring(1,2)))){
+		System.out.println("Sorry this is invalid. Please put your coordinate in the form <column><row> and make sure the column is between a and h and the number is between 1 and 8.");
+		abc = Keyboard.readString();
+	    }
+	    x1 = lol.indexOf(abc.substring(0,1)) % 8;
+	    y1 = 7 - lel.indexOf(abc.substring(1,2));
 	    
 	    
 
